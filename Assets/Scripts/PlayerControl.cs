@@ -53,8 +53,9 @@ public class PlayerControl : MonoBehaviour {
 
 		//Respawn
 		playerY = characterController.transform.position.y;
-		if (playerY < 50) {
-				characterController.transform.position = Vector3 (0, 3, 0);
+		if (playerY < -50) {
+			characterController.transform.position = new Vector3(0,3,0);
+
 		}
 	}
 }
