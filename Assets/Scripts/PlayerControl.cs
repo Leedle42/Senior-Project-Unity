@@ -3,15 +3,17 @@ using System.Collections;
 
 
 public class PlayerControl : MonoBehaviour {
-
+	//limiting variables
 	public float movementSpeed = 7.0f;
 	public float mouseSensitivity = 4.0f;
 	public float jumpSpeed = 20.0f;
-
-	float verticalRotation = 0;
 	public float upDownRange = 60.0f;
-
+	//Initializers
+	float verticalRotation = 0;
 	float verticalVelocity = 0;
+	float playerY = 3;
+
+
 
 	CharacterController characterController;
 	// Use this for initialization
@@ -48,5 +50,11 @@ public class PlayerControl : MonoBehaviour {
 		speed = transform.rotation * speed;
 
 		characterController.Move( speed * Time.deltaTime );
+
+		//Respawn
+		playerY = characterController.transform.position.y;
+		if (playerY < 50) {
+				characterController.transform.position = Vector3 (0, 3, 0);
+		}
 	}
 }
