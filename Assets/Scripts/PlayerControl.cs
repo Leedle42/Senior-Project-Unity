@@ -51,12 +51,14 @@ public class PlayerControl : MonoBehaviour {
 
 		characterController.Move( speed * Time.deltaTime );
 
+		Debug.Log (Camera.main.transform.localRotation);
+
 		//Respawn
 		playerY = characterController.transform.position.y;
 		if (playerY < -50) {
 			characterController.transform.position = new Vector3(0,3,0);
 			transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
-			Camera.main.transform.rotation = Quaternion.AngleAxis(0, Vector3.);
+			verticalRotation = 0;
 
 		}
 	}
