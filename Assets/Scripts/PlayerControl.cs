@@ -12,7 +12,9 @@ public class PlayerControl : MonoBehaviour {
 	float verticalRotation = 0;
 	float verticalVelocity = 0;
 	float playerY = 3;
-
+	//Value Givers
+	float forwardSpeed = 0;
+	float sideSpeed = 0;
 
 
 	CharacterController characterController;
@@ -26,9 +28,8 @@ public class PlayerControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//Rotation
-		float rotLeftRight = Input.GetAxis ("Mouse X") * mouseSensitivity;
-		transform.Rotate(0, rotLeftRight, 0);
+		//Vertical Rotation
+
 
 		verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
 		verticalRotation = Mathf.Clamp (verticalRotation, -upDownRange, upDownRange);
@@ -36,20 +37,27 @@ public class PlayerControl : MonoBehaviour {
 
 
 		//Movement
-		float forwardSpeed = Input.GetAxis("Vertical") * movementSpeed;
-		float sideSpeed = Input.GetAxis("Horizontal") * movementSpeed;
-
+		if (characterController.isGrounded) {
+			forwardSpeed = Input.GetAxis ("Vertical") * movementSpeed;
+			sideSpeed = Input.GetAxis ("Horizontal") * movementSpeed;
+			//Horizontal Rotation
+			float rotLeftRight = Input.GetAxis ("Mouse X") * mouseSensitivity;
+			transform.Rotate(0, rotLeftRight, 0);
+		}
 		if (characterController.isGrounded && Input.GetButtonDown ("Jump")) {
 			verticalVelocity = jumpSpeed;
 		}
-		if (!characterController.isGrounded) {
-				verticalVelocity += Physics.gravity.y * Time.deltaTime;
-		}
+
 		Vector3 speed = new Vector3(sideSpeed, verticalVelocity, forwardSpeed);
 
 		speed = transform.rotation * speed;
 
 		characterController.Move( speed * Time.deltaTime );
+
+		// Gravity
+		if (!characterController.isGrounded) {
+			verticalVelocity += Physics.gravity.y * Time.deltaTime;
+		}
 
 		Debug.Log (Camera.main.transform.localRotation);
 
