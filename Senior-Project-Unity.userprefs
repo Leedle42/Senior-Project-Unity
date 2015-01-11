@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameVariables.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerControl.cs">
     <Files>
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="48" Column="4" />
       <File FileName="Assets\Scripts\Checkpoint.cs" Line="7" Column="37" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="59" Column="4" />
       <File FileName="Assets\Scripts\Respawn.cs" Line="6" Column="25" />
       <File FileName="Assets\Scripts\GameVariables.cs" Line="5" Column="35" />
     </Files>
