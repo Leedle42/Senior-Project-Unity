@@ -7,12 +7,9 @@ public class PlayerControl : MonoBehaviour {
 	public float movementSpeed = 7.0f;
 	public float mouseSensitivity = 4.0f;
 	public float jumpSpeed = 20.0f;
-	public float upDownRange = 60.0f;
-	//Initializers
-	float verticalRotation = 0;
+	public float upDownRange = 70.0f;
+	//Non Public
 	float verticalVelocity = 0;
-	float playerY = 3;
-	//Value Givers
 	float forwardSpeed = 0;
 	float sideSpeed = 0;
 
@@ -22,6 +19,11 @@ public class PlayerControl : MonoBehaviour {
 	void Start () {
 		Screen.lockCursor = true;
 		characterController = GetComponent<CharacterController>();
+		//Value Givers
+		GameVariables.verticalRotation = 0;
+		float verticalVelocity = 0;
+		float forwardSpeed = 0;
+		float sideSpeed = 0;
 
 	}
 	
@@ -29,12 +31,9 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 
 		//Vertical Rotation
-
-
-		verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
-		verticalRotation = Mathf.Clamp (verticalRotation, -upDownRange, upDownRange);
-		Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
-
+		GameVariables.verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
+		GameVariables.verticalRotation = Mathf.Clamp (GameVariables.verticalRotation, -upDownRange, upDownRange);
+		Camera.main.transform.localRotation = Quaternion.Euler(GameVariables.verticalRotation, 0, 0);
 
 		//Movement
 		if (characterController.isGrounded) {
@@ -59,15 +58,10 @@ public class PlayerControl : MonoBehaviour {
 			verticalVelocity += Physics.gravity.y * Time.deltaTime;
 		}
 
-		Debug.Log (Camera.main.transform.localRotation);
+		Debug.Log (GameVariables.checkpoint);
 
-		//Respawn
-		playerY = characterController.transform.position.y;
-		if (playerY < -50) {
-			characterController.transform.position = new Vector3(0,3,0);
-			transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
-			verticalRotation = 0;
+
 
 		}
 	}
-}
+
