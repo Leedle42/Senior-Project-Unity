@@ -4,14 +4,17 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 	//limiting variables
-	public float movementSpeed = 7.0f;
+	public float movementSpeed = 1.0f;
 	public float mouseSensitivity = 4.0f;
 	public float jumpSpeed = 20.0f;
 	public float upDownRange = 70.0f;
 	//Non Public
 	float verticalVelocity = 0;
+	float velocityDiff = 0;
 	float forwardSpeed = 0;
 	float sideSpeed = 0;
+	float sprintSpeed = 1;
+
 
 
 	CharacterController characterController;
@@ -29,7 +32,6 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		//Vertical Rotation
 		GameVariables.verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
 		GameVariables.verticalRotation = Mathf.Clamp (GameVariables.verticalRotation, -upDownRange, upDownRange);
@@ -37,12 +39,22 @@ public class PlayerControl : MonoBehaviour {
 
 		//Movement
 		if (characterController.isGrounded) {
-			forwardSpeed = Input.GetAxis ("Vertical") * movementSpeed;
-			sideSpeed = Input.GetAxis ("Horizontal") * movementSpeed;
+			forwardSpeed = Input.GetAxis ("Vertical") * movementSpeed * sprintSpeed;
+			sideSpeed = Input.GetAxis ("Horizontal") * movementSpeed * sprintSpeed;
 			//Horizontal Rotation
 			float rotLeftRight = Input.GetAxis ("Mouse X") * mouseSensitivity;
 			transform.Rotate(0, rotLeftRight, 0);
 		}
+		//Sprinting
+		if (Input.GetButton ("Sprint") && characterController.isGrounded && ((Input.GetAxis("Vertical")!= 0) || Input.GetAxis("Horizontal")!=0)) {
+			sprintSpeed += ((Mathf.Pow (sprintSpeed, 5/3))/2) * Time.deltaTime;
+			sprintSpeed = Mathf.Clamp (sprintSpeed, 0, 7);
+		}
+		//Stop Sprinting
+		if ((!Input.GetButton("Sprint") && characterController.isGrounded)|| (characterController.isGrounded && (Input.GetAxis("Vertical")==0) && Input.GetAxis("Horizontal")==0)) {
+			sprintSpeed = 1;
+		}
+		//Jumping
 		if (characterController.isGrounded && Input.GetButtonDown ("Jump")) {
 			verticalVelocity = jumpSpeed;
 		}
@@ -56,10 +68,7 @@ public class PlayerControl : MonoBehaviour {
 		if (!characterController.isGrounded) {
 			verticalVelocity += Physics.gravity.y * Time.deltaTime;
 		}
-
-		Debug.Log (GameVariables.checkpoint);
-
-
+		Debug.Log (sprintSpeed);
 
 		}
 	}
