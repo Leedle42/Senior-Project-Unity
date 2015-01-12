@@ -10,7 +10,6 @@ public class PlayerControl : MonoBehaviour {
 	public float upDownRange = 70.0f;
 	//Non Public
 	float verticalVelocity = 0;
-	float velocityDiff = 0;
 	float forwardSpeed = 0;
 	float sideSpeed = 0;
 	float sprintSpeed = 1;
@@ -46,12 +45,12 @@ public class PlayerControl : MonoBehaviour {
 			transform.Rotate(0, rotLeftRight, 0);
 		}
 		//Sprinting
-		if (Input.GetButton ("Sprint") && characterController.isGrounded && ((Input.GetAxis("Vertical")!= 0) || Input.GetAxis("Horizontal")!=0)) {
+		if (Input.GetButton ("Sprint") && characterController.isGrounded && Input.GetAxis("Vertical")>0) {
 			sprintSpeed += ((Mathf.Pow (sprintSpeed, 5/3))/2) * Time.deltaTime;
-			sprintSpeed = Mathf.Clamp (sprintSpeed, 0, 7);
+			sprintSpeed = Mathf.Clamp (sprintSpeed, 0, 5);
 		}
 		//Stop Sprinting
-		if ((!Input.GetButton("Sprint") && characterController.isGrounded)|| (characterController.isGrounded && (Input.GetAxis("Vertical")==0) && Input.GetAxis("Horizontal")==0)) {
+		if ((!Input.GetButton("Sprint") && characterController.isGrounded)|| (characterController.isGrounded && Input.GetAxis("Vertical")==0)) {
 			sprintSpeed = 1;
 		}
 		//Jumping
