@@ -9,9 +9,6 @@ public class PlayerControl : MonoBehaviour {
 	public float jumpSpeed = 20.0f;
 	public float upDownRange = 70.0f;
 	//Non Public
-	float verticalVelocity = 0;
-	float forwardSpeed = 0;
-	float sideSpeed = 0;
 	float sprintSpeed = 1;
 
 
@@ -23,9 +20,6 @@ public class PlayerControl : MonoBehaviour {
 		characterController = GetComponent<CharacterController>();
 		//Value Givers
 		GameVariables.verticalRotation = 0;
-		float verticalVelocity = 0;
-		float forwardSpeed = 0;
-		float sideSpeed = 0;
 
 	}
 	
@@ -38,8 +32,8 @@ public class PlayerControl : MonoBehaviour {
 
 		//Movement
 		if (characterController.isGrounded) {
-			forwardSpeed = Input.GetAxis ("Vertical") * movementSpeed * sprintSpeed;
-			sideSpeed = Input.GetAxis ("Horizontal") * movementSpeed * sprintSpeed;
+			GameVariables.forwardSpeed = Input.GetAxis ("Vertical") * movementSpeed * sprintSpeed;
+			GameVariables.sideSpeed = Input.GetAxis ("Horizontal") * movementSpeed * sprintSpeed;
 			//Horizontal Rotation
 			float rotLeftRight = Input.GetAxis ("Mouse X") * mouseSensitivity;
 			transform.Rotate(0, rotLeftRight, 0);
@@ -55,9 +49,9 @@ public class PlayerControl : MonoBehaviour {
 		}
 		//Jumping
 		if (characterController.isGrounded && Input.GetButtonDown ("Jump")) {
-			verticalVelocity = jumpSpeed;
+			GameVariables.verticalVelocity = jumpSpeed;
 		}
-		Vector3 speed = new Vector3(sideSpeed, verticalVelocity, forwardSpeed);
+		Vector3 speed = new Vector3(GameVariables.sideSpeed, GameVariables.verticalVelocity, GameVariables.forwardSpeed);
 
 		speed = transform.rotation * speed;
 
@@ -65,7 +59,7 @@ public class PlayerControl : MonoBehaviour {
 
 		// Gravity
 		if (!characterController.isGrounded) {
-			verticalVelocity += Physics.gravity.y * Time.deltaTime;
+			GameVariables.verticalVelocity += Physics.gravity.y * Time.deltaTime;
 		}
 		Debug.Log (sprintSpeed);
 

@@ -14,6 +14,9 @@ public class Respawn : MonoBehaviour {
 			transform.position = GameVariables.checkpoint;
 			transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
 			GameVariables.verticalRotation = 0;
+			GameVariables.verticalVelocity = 0;
+			GameVariables.sideSpeed = 0;
+			GameVariables.forwardSpeed = 0;
 		}
 	}
 }
