@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour {
 	public float upDownRange = 70.0f;
 	//Non Public
 	float sprintSpeed = 1;
+	int gravityReset = 0;
 
 
 
@@ -58,10 +59,16 @@ public class PlayerControl : MonoBehaviour {
 		characterController.Move( speed * Time.deltaTime );
 
 		// Gravity
+		if (characterController.isGrounded && gravityReset == 0) {
+			gravityReset = 1;
+			GameVariables.verticalVelocity = -0.1f;
+		}
 		if (!characterController.isGrounded) {
 			GameVariables.verticalVelocity += Physics.gravity.y * Time.deltaTime;
+			gravityReset = 0;
 		}
-		Debug.Log (sprintSpeed);
+
+		Debug.Log (GameVariables.verticalVelocity);
 
 		}
 	}
