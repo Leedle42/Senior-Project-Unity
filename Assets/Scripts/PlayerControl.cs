@@ -61,14 +61,13 @@ public class PlayerControl : MonoBehaviour {
 		// Gravity
 		if (characterController.isGrounded && gravityReset == 0) {
 			gravityReset = 1;
-			GameVariables.verticalVelocity = -0.1f;
+			GameVariables.verticalVelocity = -0.5f;
 		}
 		if (!characterController.isGrounded) {
 			GameVariables.verticalVelocity += Physics.gravity.y * Time.deltaTime;
 			gravityReset = 0;
 		}
-
-		Debug.Log (GameVariables.verticalVelocity);
+		Debug.Log (sprintSpeed);
 
 		}
 	}
