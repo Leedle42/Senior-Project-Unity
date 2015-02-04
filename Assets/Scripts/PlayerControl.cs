@@ -67,7 +67,7 @@ public class PlayerControl : MonoBehaviour {
 			GameVariables.verticalVelocity += Physics.gravity.y * Time.deltaTime;
 			gravityReset = 0;
 		}
-		Debug.Log (sprintSpeed);
+		//Debug.Log (sprintSpeed);
 
 		}
 	}
