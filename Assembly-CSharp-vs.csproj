@@ -48,7 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\GameVariables.cs" />
-     <Compile Include="Assets\Scripts\HorizontalObject.cs" />
+     <Compile Include="Assets\Scripts\HorizontalObjectX.cs" />
+     <Compile Include="Assets\Scripts\HorizontalObjectZ.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\Respawn.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
