@@ -15,12 +15,13 @@ public class HorizontalObjectX : MonoBehaviour {
 		if (timePassed <= 3) {
 			transform.Translate(Vector3.left * horizontalVelocity * Time.deltaTime * direction, Space.World);
 		}
-		
-		if (timePassed >= 5) {
+		if (timePassed >= 10) {
 			direction = direction * -1;
 			timePassed = 0;
 		}
 		timePassed += 1.0f * Time.deltaTime;
 
-	}
+		}
+
 }
+

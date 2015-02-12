@@ -70,5 +70,9 @@ public class PlayerControl : MonoBehaviour {
 		//Debug.Log (sprintSpeed);
 
 		}
+	void OnTriggerEnter (Collider collider) {
+		if (collider.gameObject.name == "MovingPlatform-side2side")
+			print ("works");
+	}
 	}
 
