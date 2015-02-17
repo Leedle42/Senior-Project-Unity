@@ -69,10 +69,12 @@ public class PlayerControl : MonoBehaviour {
 		}
 		//Debug.Log (sprintSpeed);
 
-		}
-	void OnTriggerEnter (Collider collider) {
-		if (collider.gameObject.name == "MovingPlatform-side2side")
+	}
+	void OnTriggerStay (Collider collider) {
+		if (collider.gameObject.name == "FloatingIsland") {
+			GameVariables.collidingZ = false;
 			print ("works");
+		}
 	}
-	}
+}
 

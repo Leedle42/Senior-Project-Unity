@@ -7,4 +7,5 @@ public static class GameVariables {
 	public static float verticalVelocity;
 	public static float forwardSpeed;
 	public static float sideSpeed;
+	public static bool collidingZ;
 }
