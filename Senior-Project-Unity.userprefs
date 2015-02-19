@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HorizontalObjectX.cs">
     <Files>
-      <File FileName="Assets\Scripts\HorizontalObjectZ.cs" Line="40" Column="4" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="78" Column="2" />
-      <File FileName="Assets\Scripts\GameVariables.cs" Line="10" Column="32" />
-      <File FileName="Assets\Scripts\HorizontalObjectX.cs" Line="16" Column="36" />
+      <File FileName="Assets\Scripts\HorizontalObjectZ.cs" Line="4" Column="31" />
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="77" Column="39" />
+      <File FileName="Assets\Scripts\GameVariables.cs" Line="15" Column="33" />
+      <File FileName="Assets\Scripts\HorizontalObjectX.cs" Line="31" Column="4" />
       <File FileName="Assets\Scripts\Checkpoint.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -70,10 +70,13 @@ public class PlayerControl : MonoBehaviour {
 		//Debug.Log (sprintSpeed);
 
 	}
-	void OnTriggerStay (Collider collider) {
+	// disconnect from moving platform
+	void OnTriggerEnter (Collider collider) {
 		if (collider.gameObject.name == "FloatingIsland") {
 			GameVariables.collidingZ = false;
-			print ("works");
+			GameVariables.wasStandingZ = false;
+			GameVariables.collidingX = false;
+			GameVariables.wasStandingX = false;
 		}
 	}
 }
