@@ -45,7 +45,6 @@ public class HorizontalObjectZ : MonoBehaviour {
 			GameVariables.collidingZ = true;
 			GameVariables.wasStandingZ = true;
 			standing = true;
-			print ("works");
 		}
 	}
 	//player leaves platform
@@ -58,7 +57,6 @@ public class HorizontalObjectZ : MonoBehaviour {
 				directionOnLeave = direction;
 			}
 			standing = false;
-			print ("works");
 		}
 	}
 }

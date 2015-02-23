@@ -72,12 +72,19 @@ public class PlayerControl : MonoBehaviour {
 	}
 	// disconnect from moving platform
 	void OnTriggerEnter (Collider collider) {
-		if (collider.gameObject.name == "FloatingIsland") {
-			GameVariables.collidingZ = false;
-			GameVariables.wasStandingZ = false;
+		if (collider.gameObject.name != "MovingPlatformX1") {
 			GameVariables.collidingX = false;
 			GameVariables.wasStandingX = false;
 		}
+		if (collider.gameObject.name != "MovingPlatformZ1") {
+			GameVariables.collidingZ = false;
+			GameVariables.wasStandingZ = false;
+		}
+		if (collider.gameObject.name == "MovingPlatform-rotate1") {
+			transform.parent = GameObject.Find ("MovingPlatform-rotate1").transform;
+		}
+
 	}
 }
+
 
