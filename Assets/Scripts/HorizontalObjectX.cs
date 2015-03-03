@@ -59,7 +59,6 @@ public class HorizontalObjectX : MonoBehaviour {
 				directionOnLeave = direction;
 			}
 			standing = false;
-			print ("works");
 		}
 	}
 }

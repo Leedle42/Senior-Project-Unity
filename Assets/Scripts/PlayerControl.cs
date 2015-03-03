@@ -70,19 +70,23 @@ public class PlayerControl : MonoBehaviour {
 		//Debug.Log (sprintSpeed);
 
 	}
-	// disconnect from moving platform
 	void OnTriggerEnter (Collider collider) {
-		if (collider.gameObject.name != "MovingPlatformX1") {
+		// disconnect from moving platform
+		if (collider.gameObject.name == "FloatingIsland" || collider.gameObject.name == "MovingPlatformZ1" || collider.gameObject.name == "MovingPlatform-rotate1" || collider.gameObject.name == "Bridge") {
 			GameVariables.collidingX = false;
 			GameVariables.wasStandingX = false;
+			GameVariables.wasStandingR = false;
 		}
-		if (collider.gameObject.name != "MovingPlatformZ1") {
+		if (collider.gameObject.name == "FloatingIsland" || collider.gameObject.name == "MovingPlatformX1" || collider.gameObject.name == "MovingPlatform-rotate1" || collider.gameObject.name == "Bridge") {
 			GameVariables.collidingZ = false;
 			GameVariables.wasStandingZ = false;
+			GameVariables.wasStandingR = false;
 		}
+		// connect to circle platform
 		if (collider.gameObject.name == "MovingPlatform-rotate1") {
 			transform.parent = GameObject.Find ("MovingPlatform-rotate1").transform;
 		}
+
 
 	}
 }

@@ -1,13 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ClockwiseCircleObject.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MovingPlatformRotate1.cs">
     <Files>
-      <File FileName="Assets\Scripts\HorizontalObjectZ.cs" Line="52" Column="46" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="83" Column="62" />
-      <File FileName="Assets\Scripts\GameVariables.cs" Line="15" Column="33" />
+      <File FileName="Assets\Scripts\MovingPlatformRotate1.cs" Line="19" Column="53" />
+      <File FileName="Assets\Scripts\HorizontalObjectZ.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameVariables.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HorizontalObjectX.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Checkpoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ClockwiseCircleObject.cs" Line="5" Column="23" />
+      <File FileName="Assets\Scripts\Respawn.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
