@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MovingPlatformRotate1 : MonoBehaviour {
 	public float rotateSpeed = 20;
-	public bool colliding = false;
 	public Transform platform;
 	Vector3 launchSpeed;
 	// Use this for initialization
@@ -25,14 +24,7 @@ public class MovingPlatformRotate1 : MonoBehaviour {
 	}
 
 	void Rotate(){
-		if (colliding == true) {
-			transform.RotateAround (GameObject.Find ("rotate1Center").transform.position, new Vector3 (0, 1, 0), rotateSpeed * Time.deltaTime); // (1 is left) (-1 is right)
-		}
-	}
-	void OnTriggerEnter (Collider collider) {
-		if (collider.gameObject.name == ("Player")) {
-			colliding = true;
-		}
+		transform.RotateAround (GameObject.Find ("rotate1Center").transform.position, new Vector3 (0, 1, 0), rotateSpeed * Time.deltaTime); // (1 is left) (-1 is right)
 	}
 	void OnTriggerExit (Collider collider) {
 		if (collider.gameObject.name == ("Player")){
