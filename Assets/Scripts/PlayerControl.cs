@@ -9,8 +9,8 @@ public class PlayerControl : MonoBehaviour {
 	public float jumpSpeed = 20.0f;
 	public float upDownRange = 70.0f;
 	//Non Public
-	float sprintSpeed = 1;
 	int gravityReset = 0;
+
 
 
 
@@ -21,7 +21,7 @@ public class PlayerControl : MonoBehaviour {
 		characterController = GetComponent<CharacterController>();
 		//Value Givers
 		GameVariables.verticalRotation = 0;
-
+		GameVariables.sprintSpeed = 1;
 	}
 	
 	// Update is called once per frame
@@ -33,20 +33,20 @@ public class PlayerControl : MonoBehaviour {
 
 		//Movement
 		if (characterController.isGrounded) {
-			GameVariables.forwardSpeed = Input.GetAxis ("Vertical") * movementSpeed * sprintSpeed;
-			GameVariables.sideSpeed = Input.GetAxis ("Horizontal") * movementSpeed * sprintSpeed;
+			GameVariables.forwardSpeed = Input.GetAxis ("Vertical") * movementSpeed * GameVariables.sprintSpeed;
+			GameVariables.sideSpeed = Input.GetAxis ("Horizontal") * movementSpeed * GameVariables.sprintSpeed;
 			//Horizontal Rotation
 			float rotLeftRight = Input.GetAxis ("Mouse X") * mouseSensitivity;
 			transform.Rotate(0, rotLeftRight, 0);
 		}
 		//Sprinting
 		if (Input.GetButton ("Sprint") && characterController.isGrounded && Input.GetAxis("Vertical")>0) {
-			sprintSpeed += ((Mathf.Pow (sprintSpeed, 5/3))/2) * Time.deltaTime;
-			sprintSpeed = Mathf.Clamp (sprintSpeed, 0, 5);
+			GameVariables.sprintSpeed += ((Mathf.Pow (GameVariables.sprintSpeed, 5/3))/2) * Time.deltaTime;
+			GameVariables.sprintSpeed = Mathf.Clamp (GameVariables.sprintSpeed, 0, 5);
 		}
 		//Stop Sprinting
 		if ((!Input.GetButton("Sprint") && characterController.isGrounded)|| (characterController.isGrounded && Input.GetAxis("Vertical")==0)) {
-			sprintSpeed = 1;
+			GameVariables.sprintSpeed = 1;
 		}
 		//Jumping
 		if (characterController.isGrounded && Input.GetButtonDown ("Jump")) {
@@ -67,13 +67,12 @@ public class PlayerControl : MonoBehaviour {
 			GameVariables.verticalVelocity += Physics.gravity.y * Time.deltaTime;
 			gravityReset = 0;
 		}
-		//Debug.Log (sprintSpeed);
-
+		//Debug.Log (GameVariables.sprintSpeed);
 	}
 	void OnTriggerStay (Collider collider) {
 		if (collider.gameObject.name == "FloatingIsland") {
 			GameVariables.collidingZ = false;
-			print ("works");
+			//print ("works");
 		}
 	}
 }

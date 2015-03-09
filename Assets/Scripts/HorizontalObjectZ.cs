@@ -8,7 +8,7 @@ public class HorizontalObjectZ : MonoBehaviour {
 	int moving = 1;
 	// Use this for initialization
 	void Start () {
-		GameVariables.collidingZ = false;
+		//GameVariables.collidingZ = false;
 	}
 
 	// Update is called once per frame
@@ -35,8 +35,8 @@ public class HorizontalObjectZ : MonoBehaviour {
 	}
 	void OnTriggerStay (Collider collider) {
 		if (collider.gameObject.name == "Player") {
-			GameVariables.collidingZ = true;
-			print ("works");
+			//GameVariables.collidingZ = true;
+			//print ("works");
 		}
 
 	}

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c70f1ae337652d14eb2dea0857b5e8fa
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - SprintBar0: {fileID: 2800000, guid: f1bd39c072cdf5d449fa2df144296ed4, type: 3}
+  - SprintBar2: {fileID: 2800000, guid: 5114df2ef25633f4891ee09efe17fc1e, type: 3}
+  - SprintBar3: {fileID: 2800000, guid: 11bcf5125066447478711607dbc841de, type: 3}
+  - SprintBar4: {fileID: 2800000, guid: 02dd2f1a6661638439dc9d6071c9dfb5, type: 3}
+  - SprintBar5: {fileID: 2800000, guid: 94b1875c467b4c340acb9c714a7bbf8c, type: 3}
+  - SprintBar6: {fileID: 2800000, guid: 6fa00d39f4828f54693c239de06b0989, type: 3}
+  - SprintBar7: {fileID: 2800000, guid: 0f8c5e9fe5b91c9478c54a0c0d31954c, type: 3}
+  - SprintBar8: {fileID: 2800000, guid: 8840288796f390a4bb60e4e0a0cb6ef8, type: 3}
+  - SprintBar9: {fileID: 2800000, guid: a408e03c50c4cab4888e1b5840c21432, type: 3}
+  - SprintBar10: {fileID: 2800000, guid: f90f1a5705e9928438785fabee66bc45, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
