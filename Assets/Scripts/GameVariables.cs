@@ -8,6 +8,7 @@ public static class GameVariables {
 	public static float verticalVelocity;
 	public static float forwardSpeed;
 	public static float sideSpeed;
+	public static float sprintSpeed;
 	// player platform colliding
 	public static bool collidingZ;
 	public static bool wasStandingZ;

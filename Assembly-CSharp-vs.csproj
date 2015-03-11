@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\MovingPlatformRotate1.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\Respawn.cs" />
+     <Compile Include="Assets\Scripts\SprintBar.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

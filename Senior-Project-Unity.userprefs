@@ -1,13 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MovingPlatformRotate1.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SprintBar.cs">
     <Files>
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="95" Column="1" />
       <File FileName="Assets\Scripts\MovingPlatformRotate1.cs" Line="34" Column="63" />
       <File FileName="Assets\Scripts\HorizontalObjectZ.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="83" Column="39" />
-      <File FileName="Assets\Scripts\GameVariables.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameVariables.cs" Line="18" Column="2" />
       <File FileName="Assets\Scripts\HorizontalObjectX.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Respawn.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SprintBar.cs" Line="31" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
