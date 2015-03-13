@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SprintBar : MonoBehaviour {
 
-	private RawImage Sprint_Bar;
+	public GameObject SprintImage;
 	public Texture SprintBar0;
 	public Texture SprintBar2;
 	public Texture SprintBar3;
@@ -28,21 +28,20 @@ public class SprintBar : MonoBehaviour {
 	
 	// Use this for initialization
 	public void Start () {
-		Sprint_Bar = (RawImage)Sprint_Bar.GetComponent<RawImage>();
-		img = (RawImage)Sprint_Bar.GetComponent<RawImage>();
+		img = (RawImage)SprintImage.GetComponent<RawImage>();
 
 	}
 	
 	// Update is called once per frame
 	public void Update () {
 		Debug.Log (Input.GetAxis ("Vertical"));
-		if (Input.GetAxis ("Vertical") == 0 && Input.GetAxis ("Horizontal") == 0) {
+		if (Mathf.Abs(Input.GetAxis ("Vertical")) == 0 && Mathf.Abs (Input.GetAxis ("Horizontal")) == 0) {
 			//Default bar
-			gameObject.texture = (Texture)SprintBar0;
+			img.texture = (Texture)SprintBar0;
 		}
-		if (Input.GetAxis ("Vertical") == 1 || Input.GetAxis ("Horizontal") == 1) {
+		if (Mathf.Abs(Input.GetAxis ("Vertical")) == 1 || Mathf.Abs(Input.GetAxis ("Horizontal")) == 1) {
 			//SprintBar2
-			RawImage.gameObject.texture = (Texture)SprintBar2;
+			img.texture = (Texture)SprintBar2;
 		}
 		if (GameVariables.sprintSpeed > 1.0 && GameVariables.sprintSpeed <= 1.5) {
 			//SprintBar3

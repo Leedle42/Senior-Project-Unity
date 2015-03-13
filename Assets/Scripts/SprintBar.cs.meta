@@ -1,10 +1,21 @@
 fileFormatVersion: 2
 guid: 038c0c4bea63ebb49b8489b3f479cf45
-timeCreated: 1426092983
+timeCreated: 1426262892
 licenseType: Pro
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - SprintImage: {instanceID: 0}
+  - SprintBar0: {fileID: 2800000, guid: 8efef67253ac40246b39823ba7646030, type: 3}
+  - SprintBar2: {fileID: 2800000, guid: 35e32b9bb3979b04c94e53cf6842b870, type: 3}
+  - SprintBar3: {fileID: 2800000, guid: 56b53083f8523c04794785cd88a998ef, type: 3}
+  - SprintBar4: {fileID: 2800000, guid: 8966c0c5ce9fe7347954f2043c69d8b4, type: 3}
+  - SprintBar5: {fileID: 2800000, guid: 65f87b5b324546d4d93aa9bb3289c0cb, type: 3}
+  - SprintBar6: {fileID: 2800000, guid: e1ec12384ee0fd0418e2dd706093e6de, type: 3}
+  - SprintBar7: {fileID: 2800000, guid: f385769b68a20ef449db7cdb2ce7d19d, type: 3}
+  - SprintBar8: {fileID: 2800000, guid: 6c05764e98595b44c8f784218949d57b, type: 3}
+  - SprintBar9: {fileID: 2800000, guid: ed0e2938bb091ad45aae30f6e5799e99, type: 3}
+  - SprintBar10: {fileID: 2800000, guid: 28062c4702d549748a008be6f7ffa844, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

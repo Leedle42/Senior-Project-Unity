@@ -41,7 +41,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 		//Sprinting
 		if (Input.GetButton ("Sprint") && characterController.isGrounded && Input.GetAxis("Vertical")>0) {
-			GameVariables.sprintSpeed += ((Mathf.Pow (GameVariables.sprintSpeed, 5/3))/2) * Time.deltaTime;
+			GameVariables.sprintSpeed += ((Mathf.Pow (GameVariables.sprintSpeed, 2))/3) * Time.deltaTime;
 			GameVariables.sprintSpeed = Mathf.Clamp (GameVariables.sprintSpeed, 0, 5);
 		}
 		//Stop Sprinting
