@@ -16,7 +16,8 @@ public class PlayerControl : MonoBehaviour {
 	CharacterController characterController;
 	// Use this for initialization
 	void Start () {
-		Screen.lockCursor = true;
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 		characterController = GetComponent<CharacterController>();
 		//Value Givers
 		GameVariables.verticalRotation = 0;
@@ -67,10 +68,11 @@ public class PlayerControl : MonoBehaviour {
 			GameVariables.verticalVelocity += Physics.gravity.y * Time.deltaTime;
 			gravityReset = 0;
 		}
-		//Debug.Log (sprintSpeed);
-
 	}
+
 	void OnTriggerEnter (Collider collider) {
+		// track last object collided with
+		GameVariables.lastCollide = collider.gameObject;
 		// disconnect from moving platform
 		if (collider.gameObject.name == "FloatingIsland" || collider.gameObject.name == "MovingPlatformZ1" || collider.gameObject.name == "MovingPlatform-rotate1" || collider.gameObject.name == "Bridge") {
 			GameVariables.collidingX = false;
@@ -78,7 +80,7 @@ public class PlayerControl : MonoBehaviour {
 			GameVariables.wasStandingR = false;
 		}
 		if (collider.gameObject.name == "FloatingIsland" || collider.gameObject.name == "MovingPlatformX1" || collider.gameObject.name == "MovingPlatform-rotate1" || collider.gameObject.name == "Bridge") {
-			GameVariables.collidingZ = false;
+			//GameVariables.collidingZ = false;
 			GameVariables.wasStandingZ = false;
 			GameVariables.wasStandingR = false;
 		}

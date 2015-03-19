@@ -4,6 +4,7 @@ using System.Collections;
 public class HorizontalObjectZ : MonoBehaviour {
 	public float horizontalVelocity = 2f;
 	public int direction = 1;
+	public string thisObject = "MovingPlatformZ1";
 	int directionOnLeave = 1;
 	float timePassed = 0;
 	int moving = 1;
@@ -31,11 +32,12 @@ public class HorizontalObjectZ : MonoBehaviour {
 		}
 		// timer
 		timePassed += 1.0f * Time.deltaTime;
+		Debug.Log (GameVariables.lastCollide.name);
 		// move player
-		if (GameVariables.collidingZ == true && standing == true) {
+		if (GameVariables.lastCollide.name == thisObject && standing == true) {
 			GameObject.Find("Player").transform.Translate (Vector3.forward * horizontalVelocity * Time.deltaTime * direction * moving, Space.World);
 		}
-		if (GameVariables.collidingZ == true && standing == false && GameVariables.wasStandingZ == true) {
+		if (GameVariables.lastCollide.name == thisObject && standing == false && GameVariables.wasStandingZ == true) {
 			GameObject.Find("Player").transform.Translate (Vector3.forward * horizontalVelocity * Time.deltaTime * directionOnLeave , Space.World);
 		}
 	}
@@ -59,4 +61,6 @@ public class HorizontalObjectZ : MonoBehaviour {
 			standing = false;
 		}
 	}
+	// Note: have player set a variable to whatever the last platform it collided with was
+	// then whenever it collides with a new object it will disconnect from everything.
 }

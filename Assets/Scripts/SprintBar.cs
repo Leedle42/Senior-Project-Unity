@@ -34,7 +34,6 @@ public class SprintBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void Update () {
-		Debug.Log (Input.GetAxis ("Vertical"));
 		if (Mathf.Abs(Input.GetAxis ("Vertical")) == 0 && Mathf.Abs (Input.GetAxis ("Horizontal")) == 0) {
 			//Default bar
 			img.texture = (Texture)SprintBar0;

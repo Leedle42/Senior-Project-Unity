@@ -15,4 +15,5 @@ public static class GameVariables {
 	public static bool collidingX;
 	public static bool wasStandingX;
 	public static bool wasStandingR;
+	public static GameObject lastCollide;
 }

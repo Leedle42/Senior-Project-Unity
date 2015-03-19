@@ -4,6 +4,7 @@ using System.Collections;
 public class HorizontalObjectX : MonoBehaviour {
 	public float horizontalVelocity = 2f;
 	public int direction = 1;
+	public string thisObject = "MovingPlatformX1";
 	int directionOnLeave = 1;
 	float timePassed = 0;
 	int moving = 1;
@@ -32,10 +33,10 @@ public class HorizontalObjectX : MonoBehaviour {
 		// timer
 		timePassed += 1.0f * Time.deltaTime;
 		// move player
-		if (GameVariables.collidingX == true && standing == true) {
+		if (GameVariables.lastCollide.name == thisObject && standing == true) {
 			GameObject.Find("Player").transform.Translate (Vector3.left * horizontalVelocity * Time.deltaTime * direction * moving, Space.World);
 		}
-		if (GameVariables.collidingX == true && standing == false && GameVariables.wasStandingX == true) {
+		if (GameVariables.lastCollide.name == thisObject && standing == false && GameVariables.wasStandingX == true) {
 			GameObject.Find("Player").transform.Translate (Vector3.left * horizontalVelocity * Time.deltaTime * directionOnLeave , Space.World);
 		}
 	}
@@ -45,7 +46,6 @@ public class HorizontalObjectX : MonoBehaviour {
 			GameVariables.collidingX = true;
 			GameVariables.wasStandingX = true;
 			standing = true;
-			print ("works");
 
 		}
 	}
