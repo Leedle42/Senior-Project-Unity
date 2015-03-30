@@ -15,15 +15,6 @@ public class SprintBar : MonoBehaviour {
 	public Texture SprintBar8;
 	public Texture SprintBar9;
 	public Texture SprintBar10;
-	//private RawImage SprintBar0;
-	//private RawImage SprintBar2;
-	//private RawImage SprintBar3;
-	//private RawImage SprintBar4;
-	//private RawImage SprintBar5;
-	//private RawImage SprintBar6;
-	//private RawImage SprintBar7;
-	//private RawImage SprintBar8;
-	//private RawImage SprintBar9;
 	private RawImage img;
 	
 	// Use this for initialization

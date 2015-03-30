@@ -22,11 +22,13 @@ public class PlayerControl : MonoBehaviour {
 		//Value Givers
 		GameVariables.verticalRotation = 0;
 		GameVariables.sprintSpeed = 1;
+		GameVariables.lastCollide = GameObject.Find ("FloatingIsland");
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log (GameVariables.lastCollide.name);
 		//Vertical Rotation
 		GameVariables.verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
 		GameVariables.verticalRotation = Mathf.Clamp (GameVariables.verticalRotation, -upDownRange, upDownRange);
@@ -72,21 +74,12 @@ public class PlayerControl : MonoBehaviour {
 
 	void OnTriggerEnter (Collider collider) {
 		// track last object collided with
-		GameVariables.lastCollide = collider.gameObject;
-		// disconnect from moving platform
-		if (collider.gameObject.name == "FloatingIsland" || collider.gameObject.name == "MovingPlatformZ1" || collider.gameObject.name == "MovingPlatform-rotate1" || collider.gameObject.name == "Bridge") {
-			GameVariables.collidingX = false;
-			GameVariables.wasStandingX = false;
-			GameVariables.wasStandingR = false;
-		}
-		if (collider.gameObject.name == "FloatingIsland" || collider.gameObject.name == "MovingPlatformX1" || collider.gameObject.name == "MovingPlatform-rotate1" || collider.gameObject.name == "Bridge") {
-			//GameVariables.collidingZ = false;
-			GameVariables.wasStandingZ = false;
-			GameVariables.wasStandingR = false;
+		if (collider.gameObject.name != "Player") { // line added so you cant collide with yourself at high speeds
+			GameVariables.lastCollide = collider.gameObject;
 		}
 		// connect to circle platform
-		if (collider.gameObject.name == "MovingPlatform-rotate1") {
-			transform.parent = GameObject.Find ("MovingPlatform-rotate1").transform;
+		if (collider.gameObject.name == "ClockwiseRotate1") {
+			transform.parent = GameObject.Find ("ClockwiseRotate1").transform;
 		}
 
 

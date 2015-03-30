@@ -16,6 +16,7 @@ public class HorizontalObjectX : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		transform.Translate(Vector3.left * horizontalVelocity * Time.deltaTime * direction * moving, Space.World);
 		// moving
 		if (timePassed <= 3) {
@@ -36,15 +37,13 @@ public class HorizontalObjectX : MonoBehaviour {
 		if (GameVariables.lastCollide.name == thisObject && standing == true) {
 			GameObject.Find("Player").transform.Translate (Vector3.left * horizontalVelocity * Time.deltaTime * direction * moving, Space.World);
 		}
-		if (GameVariables.lastCollide.name == thisObject && standing == false && GameVariables.wasStandingX == true) {
+		if (GameVariables.lastCollide.name == thisObject && standing == false) {
 			GameObject.Find("Player").transform.Translate (Vector3.left * horizontalVelocity * Time.deltaTime * directionOnLeave , Space.World);
 		}
 	}
 	//player stands on platform
-	void OnTriggerEnter (Collider collider) {
+	void OnTriggerEnter(Collider collider) {
 		if (collider.gameObject.name == "Player") {
-			GameVariables.collidingX = true;
-			GameVariables.wasStandingX = true;
 			standing = true;
 
 		}

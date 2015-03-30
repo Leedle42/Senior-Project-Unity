@@ -32,20 +32,17 @@ public class HorizontalObjectZ : MonoBehaviour {
 		}
 		// timer
 		timePassed += 1.0f * Time.deltaTime;
-		Debug.Log (GameVariables.lastCollide.name);
 		// move player
 		if (GameVariables.lastCollide.name == thisObject && standing == true) {
 			GameObject.Find("Player").transform.Translate (Vector3.forward * horizontalVelocity * Time.deltaTime * direction * moving, Space.World);
 		}
-		if (GameVariables.lastCollide.name == thisObject && standing == false && GameVariables.wasStandingZ == true) {
+		if (GameVariables.lastCollide.name == thisObject && standing == false) {
 			GameObject.Find("Player").transform.Translate (Vector3.forward * horizontalVelocity * Time.deltaTime * directionOnLeave , Space.World);
 		}
 	}
 	//player stands on platform
 	void OnTriggerEnter (Collider collider) {
 		if (collider.gameObject.name == "Player") {
-			GameVariables.collidingZ = true;
-			GameVariables.wasStandingZ = true;
 			standing = true;
 		}
 	}
@@ -61,6 +58,5 @@ public class HorizontalObjectZ : MonoBehaviour {
 			standing = false;
 		}
 	}
-	// Note: have player set a variable to whatever the last platform it collided with was
-	// then whenever it collides with a new object it will disconnect from everything.
+
 }

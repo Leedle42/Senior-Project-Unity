@@ -23,6 +23,7 @@ public class Respawn : MonoBehaviour {
 			GameVariables.collidingX = false;
 			GameVariables.wasStandingX = false;
 			GameVariables.wasStandingR = false;
+			GameVariables.lastCollide = GameObject.Find ("FloatingIsland");
 		}
 	}
 }

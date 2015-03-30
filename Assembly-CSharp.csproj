@@ -47,10 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Checkpoint.cs" />
+     <Compile Include="Assets\Scripts\ClockwiseRotate1.cs" />
      <Compile Include="Assets\Scripts\GameVariables.cs" />
      <Compile Include="Assets\Scripts\HorizontalObjectX.cs" />
      <Compile Include="Assets\Scripts\HorizontalObjectZ.cs" />
-     <Compile Include="Assets\Scripts\MovingPlatformRotate1.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\Respawn.cs" />
      <Compile Include="Assets\Scripts\SprintBar.cs" />
