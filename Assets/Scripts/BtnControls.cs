@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BtnControls : MonoBehaviour {
 
-	public GameObject exitMenu, optionsMenu;
+	public GameObject exitMenu, optionsMenu, playBtn, optionsBtn, exitBtn;
 
 	void Awake(){
 		exitMenu.SetActive (false);
@@ -16,9 +16,15 @@ public class BtnControls : MonoBehaviour {
 	
 	public void ExitMenuShow(){
 		exitMenu.SetActive (true);
+		playBtn.SetActive (false);
+		optionsBtn.SetActive (false);
+		exitBtn.SetActive (false);
 	}
 	public void ExitMenuHide(){
 		exitMenu.SetActive (false);
+		playBtn.SetActive (true);
+		optionsBtn.SetActive (true);
+		exitBtn.SetActive (true);
 	}
 	public void ExitGame(){
 		Application.Quit ();
@@ -26,8 +32,14 @@ public class BtnControls : MonoBehaviour {
 
 	public void OptMenuShow(){
 		optionsMenu.SetActive (true);
+		playBtn.SetActive (false);
+		optionsBtn.SetActive (false);
+		exitBtn.SetActive (false);
 	}
 	public void OptMenuHide(){
 		optionsMenu.SetActive (false);
+		playBtn.SetActive (true);
+		optionsBtn.SetActive (true);
+		exitBtn.SetActive (true);
 	}
 }
