@@ -3,11 +3,12 @@ using System.Collections;
 
 public class BtnControls : MonoBehaviour {
 
-	public GameObject exitMenu, optionsMenu, playBtn, optionsBtn, exitBtn;
+	public GameObject exitMenu, optionsMenu, playBtn, optionsBtn, exitBtn, pauseScreen;
 
 	void Awake(){
 		exitMenu.SetActive (false);
 		optionsMenu.SetActive (false);
+		pauseScreen.SetActive (false);
 	}
 
 	public void StartGame(){
@@ -42,4 +43,28 @@ public class BtnControls : MonoBehaviour {
 		optionsBtn.SetActive (true);
 		exitBtn.SetActive (true);
 	}
+	
+	public void ResumeGame(){
+		GameVariables.paused = false;
+		GameVariables.resume = true;
+		pauseScreen.SetActive (false);
+	}
+	public void ExitToMainMenu(){
+		Application.LoadLevel(1);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
