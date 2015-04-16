@@ -32,7 +32,7 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (GameVariables.lastCollide.name);
+
 		if (Input.GetButtonUp("Pause")){
 			Time.timeScale = 0f;
 			Cursor.visible = true;

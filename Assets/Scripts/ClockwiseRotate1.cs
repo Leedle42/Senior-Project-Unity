@@ -16,7 +16,7 @@ public class ClockwiseRotate1 : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.DrawRay (transform.position, Vector3.up * 10, Color.green);
+		//Debug.DrawRay (transform.position, Vector3.up * 10, Color.green);
 		Rotate ();
 		if (GameVariables.lastCollide.name != thisObject) {
 			GameVariables.wasStandingR = false;
