@@ -1,59 +1,9 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-32bit-1-1272
+Pipe name: \\.\pipe\UnityShaderCompiler-32bit-1-6892
 Cmd: getPlatforms
-Cmd: compileSnippet
-  api=1 type=0 insize=886 outsize=851 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=886 outsize=1130 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=816 outsize=781 kw=DIRECTIONAL SHADOWS_OFF _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=816 outsize=708 kw=DIRECTIONAL SHADOWS_OFF _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=816 outsize=871 kw=POINT SHADOWS_OFF _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=816 outsize=850 kw=POINT SHADOWS_OFF _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=886 outsize=851 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _ALPHAPREMULTIPLY_ON _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=886 outsize=1160 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _ALPHAPREMULTIPLY_ON _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=816 outsize=781 kw=DIRECTIONAL SHADOWS_OFF _ALPHAPREMULTIPLY_ON _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=816 outsize=738 kw=DIRECTIONAL SHADOWS_OFF _ALPHAPREMULTIPLY_ON _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=816 outsize=871 kw=POINT SHADOWS_OFF _ALPHAPREMULTIPLY_ON _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=816 outsize=870 kw=POINT SHADOWS_OFF _ALPHAPREMULTIPLY_ON _METALLICGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=600 outsize=878 kw=SHADOWS_DEPTH _ALPHATEST_ON ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=600 outsize=159 kw=SHADOWS_DEPTH _ALPHATEST_ON ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=886 outsize=851 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _ALPHATEST_ON ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=886 outsize=1177 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _ALPHATEST_ON ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=816 outsize=781 kw=DIRECTIONAL SHADOWS_OFF _ALPHATEST_ON ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=816 outsize=740 kw=DIRECTIONAL SHADOWS_OFF _ALPHATEST_ON ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=816 outsize=871 kw=POINT SHADOWS_OFF _ALPHATEST_ON ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=816 outsize=847 kw=POINT SHADOWS_OFF _ALPHATEST_ON ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=600 outsize=878 kw=SHADOWS_DEPTH _ALPHABLEND_ON ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=600 outsize=159 kw=SHADOWS_DEPTH _ALPHABLEND_ON ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=886 outsize=851 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _ALPHABLEND_ON ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=886 outsize=1132 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _ALPHABLEND_ON ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=816 outsize=781 kw=DIRECTIONAL SHADOWS_OFF _ALPHABLEND_ON ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=816 outsize=720 kw=DIRECTIONAL SHADOWS_OFF _ALPHABLEND_ON ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=816 outsize=871 kw=POINT SHADOWS_OFF _ALPHABLEND_ON ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=816 outsize=827 kw=POINT SHADOWS_OFF _ALPHABLEND_ON ok=1
+Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
+
+
+Quitting shader compiler process
+
+Crashed!

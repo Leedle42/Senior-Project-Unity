@@ -2,8 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class SprintBar : MonoBehaviour {
+public class GUIManager : MonoBehaviour {
 
+	//Sprint Bar
 	public GameObject SprintImage;
 	public Texture SprintBar0;
 	public Texture SprintBar2;
@@ -16,11 +17,16 @@ public class SprintBar : MonoBehaviour {
 	public Texture SprintBar9;
 	public Texture SprintBar10;
 	private RawImage img;
-	
+
+	//Death Text
+	public GameObject Death_Text;
+	Text death;
+
 	// Use this for initialization
 	public void Start () {
 		img = (RawImage)SprintImage.GetComponent<RawImage>();
-
+		death = Death_Text.GetComponent<Text> ();
+		death.text = "Deaths: " + GameVariables.deaths;
 	}
 	
 	// Update is called once per frame
@@ -65,5 +71,8 @@ public class SprintBar : MonoBehaviour {
 			//SprintBar10
 			img.texture = (Texture)SprintBar10;
 		}
+
+		//Death Counter
+		death.text = "Deaths: " + GameVariables.deaths;
 	}
 }

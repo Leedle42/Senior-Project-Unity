@@ -24,6 +24,8 @@ public class Respawn : MonoBehaviour {
 			GameVariables.wasStandingX = false;
 			GameVariables.wasStandingR = false;
 			GameVariables.lastCollide = GameObject.Find ("FloatingIsland");
+			//Add to death counter
+			++GameVariables.deaths;
 		}
 	}
 }

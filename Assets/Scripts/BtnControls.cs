@@ -5,7 +5,7 @@ public class BtnControls : MonoBehaviour {
 
 	public GameObject exitMenu, optionsMenu, playBtn, optionsBtn, exitBtn, pauseScreen;
 
-	void Awake(){
+	void Awake () {
 		exitMenu.SetActive (false);
 		optionsMenu.SetActive (false);
 		pauseScreen.SetActive (false);
