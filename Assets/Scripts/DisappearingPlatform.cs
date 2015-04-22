@@ -7,24 +7,27 @@ public class DisappearingPlatform : MonoBehaviour {
 	float timer = 0;
 	bool disappear = false;
 	private BoxCollider boxCollider;
+	private MeshRenderer meshRenderer;
 	// Use this for initialization
 	void Start () {
 		boxCollider = GetComponent<BoxCollider>();
+		meshRenderer = GetComponent <MeshRenderer>();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (boxCollider.enabled);
 		if (disappear == true) {
 			//timer
 			timer += 1.0f * Time.deltaTime;
 			//disappear
 			if (timer >= vanishTime && boxCollider.enabled == true){
+				meshRenderer.enabled = false;
 				boxCollider.enabled = false;
 			}
 			//re-appear
 			if (timer >= appearTime){
 				timer = 0;
+				meshRenderer.enabled = true;
 				boxCollider.enabled = true;
 				disappear = false;
 			}

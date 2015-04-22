@@ -12,7 +12,7 @@ public class Respawn : MonoBehaviour {
 	void Update () {
 	if (transform.position.y < -50) {
 			transform.position = GameVariables.checkpoint;
-			transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
+			transform.rotation = GameVariables.checkpointRot;
 			GameVariables.verticalRotation = 0;
 			GameVariables.verticalVelocity = 0;
 			GameVariables.sideSpeed = 0;

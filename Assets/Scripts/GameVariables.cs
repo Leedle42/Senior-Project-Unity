@@ -3,6 +3,7 @@ using System.Collections;
 
 public static class GameVariables {
 	public static Vector3 checkpoint;
+	public static Quaternion checkpointRot;
 	//things for player
 	public static float verticalRotation;
 	public static float verticalVelocity;

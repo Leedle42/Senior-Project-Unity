@@ -16,6 +16,7 @@ public class HorizontalObjectZ : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
 		transform.Translate(Vector3.forward * horizontalVelocity * Time.deltaTime * direction * moving, Space.World);
 		// moving
 		if (timePassed <= 3) {

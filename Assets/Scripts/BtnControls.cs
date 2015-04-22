@@ -13,6 +13,7 @@ public class BtnControls : MonoBehaviour {
 
 	public void StartGame(){
 		Application.LoadLevel(0);
+		GameVariables.deaths = 0;
 	}
 	
 	public void ExitMenuShow(){
