@@ -6,6 +6,7 @@ public class Respawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GameVariables.checkpoint = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+		GameVariables.checkpointRot = Quaternion.Euler(0, 180, 0);
 	}
 	
 	// Update is called once per frame
