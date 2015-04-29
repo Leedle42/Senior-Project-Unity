@@ -20,7 +20,9 @@ public static class GameVariables {
 
 	public static bool paused;
 	public static bool resume;
+	public static bool respawn = false;
+	public static bool died = false;
 
-	//Deaths
 	public static int deaths = 0;
+	public static int level = 0;
 }

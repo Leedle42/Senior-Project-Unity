@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 
@@ -32,7 +32,7 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		//Pause Screen Scripts
 		if (Input.GetButtonUp("Pause")){
 			Time.timeScale = 0f;
 			Cursor.visible = true;
@@ -47,7 +47,7 @@ public class PlayerControl : MonoBehaviour {
 			Cursor.lockState = CursorLockMode.Locked;
 			GameVariables.resume = false;
 		}
-		if (!GameVariables.paused) {
+		if (!GameVariables.paused && !GameVariables.died) {
 			//Vertical Rotation
 			GameVariables.verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
 			GameVariables.verticalRotation = Mathf.Clamp (GameVariables.verticalRotation, -upDownRange, upDownRange);

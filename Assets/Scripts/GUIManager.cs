@@ -18,19 +18,41 @@ public class GUIManager : MonoBehaviour {
 	public Texture SprintBar10;
 	private RawImage img;
 
+	//Level Text
+	public GameObject Level_Text;
+	Text level;
+
 	//Death Text
 	public GameObject Death_Text;
 	Text death;
 
+	//Death
+	public GameObject DeathOverlay;
+	public GameObject Death_Menu;
+
 	// Use this for initialization
 	public void Start () {
+		DeathOverlay.SetActive (false);
+		Death_Menu.SetActive (false);
 		img = (RawImage)SprintImage.GetComponent<RawImage>();
+		level = Level_Text.GetComponent<Text> ();
+		level.text = "Level: " + GameVariables.level;
 		death = Death_Text.GetComponent<Text> ();
 		death.text = "Deaths: " + GameVariables.deaths;
 	}
 	
 	// Update is called once per frame
 	public void Update () {
+		if (GameVariables.died) {
+			DeathOverlay.SetActive (true);
+			Death_Menu.SetActive (true);
+			Death_Text.SetActive (false);
+			Level_Text.SetActive (false);
+			SprintImage.SetActive (false);
+			Time.timeScale = 0f;
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
+		}
 		if (Mathf.Abs(Input.GetAxis ("Vertical")) == 0 && Mathf.Abs (Input.GetAxis ("Horizontal")) == 0) {
 			//Default bar
 			img.texture = (Texture)SprintBar0;

@@ -11,7 +11,10 @@ public class Respawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	if (transform.position.y < -50) {
+		if (transform.position.y < -50 && !GameVariables.respawn) {
+			GameVariables.died = true;
+		}
+		if (GameVariables.respawn){
 			transform.position = GameVariables.checkpoint;
 			transform.rotation = GameVariables.checkpointRot;
 			GameVariables.verticalRotation = 0;
@@ -25,8 +28,12 @@ public class Respawn : MonoBehaviour {
 			GameVariables.wasStandingX = false;
 			GameVariables.wasStandingR = false;
 			GameVariables.lastCollide = GameObject.Find ("FloatingIsland");
+			Time.timeScale = 1f;
+			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
 			//Add to death counter
 			++GameVariables.deaths;
+			GameVariables.respawn = false;
 		}
 	}
 }

@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿
+
+using UnityEngine;
 using System.Collections;
 
 public class BtnControls : MonoBehaviour {
 
-	public GameObject exitMenu, optionsMenu, playBtn, optionsBtn, exitBtn, pauseScreen;
+	public GameObject exitMenu, optionsMenu, playBtn, optionsBtn, exitBtn, pauseScreen, Death_Overlay, DeathMenu,
+	Death_Text, Level_Text, SprintImage;
 
 	void Awake () {
 		exitMenu.SetActive (false);
@@ -14,6 +17,8 @@ public class BtnControls : MonoBehaviour {
 	public void StartGame(){
 		Application.LoadLevel(0);
 		GameVariables.deaths = 0;
+		GameVariables.respawn = false;
+		GameVariables.died = false;
 	}
 	
 	public void ExitMenuShow(){
@@ -52,6 +57,15 @@ public class BtnControls : MonoBehaviour {
 	}
 	public void ExitToMainMenu(){
 		Application.LoadLevel(1);
+	}
+	public void Respawn(){
+		GameVariables.respawn = true;
+		GameVariables.died = false;
+		DeathMenu.SetActive (false);
+		Death_Overlay.SetActive (false);
+		Death_Text.SetActive (true);
+		Level_Text.SetActive (true);
+		SprintImage.SetActive (true);
 	}
 }
 
