@@ -1,13 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BtnControls.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Respawn.cs">
     <Files>
+      <File FileName="Assets\Scripts\DisappearingPlatform.cs" Line="39" Column="20" />
       <File FileName="Assets\Scripts\GUIManager.cs" Line="52" Column="24" />
       <File FileName="Assets\Scripts\BtnControls.cs" Line="21" Column="30" />
       <File FileName="Assets\Scripts\Respawn.cs" Line="14" Column="38" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="48" Column="33" />
-      <File FileName="Assets\Scripts\Checkpoint.cs" Line="14" Column="1" />
-      <File FileName="Assets\Scripts\GameVariables.cs" Line="27" Column="30" />
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="95" Column="13" />
+      <File FileName="Assets\Scripts\Checkpoint.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameVariables.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
