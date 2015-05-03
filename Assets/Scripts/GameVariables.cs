@@ -15,7 +15,7 @@ public static class GameVariables {
 	public static bool wasStandingZ;
 	public static bool collidingX;
 	public static bool wasStandingX;
-	public static bool wasStandingR;
+	public static bool fellFromRotate;
 	public static GameObject lastCollide;
 
 	public static bool paused;

@@ -4,9 +4,11 @@ using System.Collections;
 public class HorizontalObjectZ : MonoBehaviour {
 	public float horizontalVelocity = 2f;
 	public int direction = 1;
+	public float travelTime = 3;
+	public float reverseTime = 5;
 	public string thisObject = "MovingPlatformZ1";
 	int directionOnLeave = 1;
-	float timePassed = 0;
+	public float timePassed = 0;
 	int moving = 1;
 	bool standing = false;
 	// Use this for initialization
@@ -16,18 +18,18 @@ public class HorizontalObjectZ : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+	
 		transform.Translate(Vector3.forward * horizontalVelocity * Time.deltaTime * direction * moving, Space.World);
 		// moving
-		if (timePassed <= 3) {
+		if (timePassed <= travelTime) {
 			moving = 1;
 		}
 		// stop
-		if (timePassed > 3) {
+		if (timePassed > travelTime) {
 			moving = 0;
 		}
 		//turn around
-		if (timePassed >= 5) {
+		if (timePassed >= reverseTime) {
 			direction = direction * -1;
 			timePassed = 0;
 		}

@@ -101,8 +101,18 @@ public class PlayerControl : MonoBehaviour {
 		if (collider.gameObject.name == "ClockwiseRotate1") {
 			transform.parent = GameObject.Find ("ClockwiseRotate1").transform;
 		}
-
-
+		if (collider.gameObject.name == "ClockwiseRotate2") {
+			transform.parent = GameObject.Find ("ClockwiseRotate2").transform;
+		}
+		if (collider.gameObject.name == "ClockwiseRotate3") {
+			transform.parent = GameObject.Find ("ClockwiseRotate3").transform;
+		}
+		if (collider.gameObject.name == "ClockwiseRotate4") {
+			transform.parent = GameObject.Find ("ClockwiseRotate4").transform;
+		}
+		if (collider.gameObject.name == "ClockwiseRotate5") {
+			transform.parent = GameObject.Find ("ClockwiseRotate5").transform;
+		}
 	}
 }
 

@@ -4,6 +4,8 @@ using System.Collections;
 public class HorizontalObjectX : MonoBehaviour {
 	public float horizontalVelocity = 2f;
 	public int direction = 1;
+	public int travelTime = 3;
+	public int reverseTime = 5;
 	public string thisObject = "MovingPlatformX1";
 	int directionOnLeave = 1;
 	float timePassed = 0;
@@ -19,15 +21,15 @@ public class HorizontalObjectX : MonoBehaviour {
 
 		transform.Translate(Vector3.left * horizontalVelocity * Time.deltaTime * direction * moving, Space.World);
 		// moving
-		if (timePassed <= 3) {
+		if (timePassed <= travelTime) {
 			moving = 1;
 		}
 		// stop
-		if (timePassed > 3) {
+		if (timePassed > travelTime) {
 			moving = 0;
 		}
 		//turn around
-		if (timePassed >= 5) {
+		if (timePassed >= reverseTime) {
 			direction = direction * -1;
 			timePassed = 0;
 		}
