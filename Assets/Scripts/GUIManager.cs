@@ -96,5 +96,8 @@ public class GUIManager : MonoBehaviour {
 
 		//Death Counter
 		death.text = "Deaths: " + GameVariables.deaths;
+
+		//Level update
+		level.text = "Level: " + GameVariables.level;
 	}
 }
