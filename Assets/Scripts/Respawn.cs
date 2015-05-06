@@ -21,6 +21,7 @@ public class Respawn : MonoBehaviour {
 			GameVariables.verticalVelocity = 0;
 			GameVariables.sideSpeed = 0;
 			GameVariables.forwardSpeed = 0;
+			GameVariables.sprintSpeed = 1;
 			// in case fall off of moving platform (reset the velocity)
 			GameVariables.fellFromRotate = true;
 			GameVariables.collidingZ = false;
