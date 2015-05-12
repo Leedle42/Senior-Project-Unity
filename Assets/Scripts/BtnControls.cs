@@ -15,7 +15,7 @@ public class BtnControls : MonoBehaviour {
 	}
 
 	public void StartGame(){
-		Application.LoadLevel(0);
+		Application.LoadLevel(1);
 		GameVariables.deaths = 0;
 		GameVariables.respawn = false;
 		GameVariables.died = false;
@@ -56,7 +56,7 @@ public class BtnControls : MonoBehaviour {
 		pauseScreen.SetActive (false);
 	}
 	public void ExitToMainMenu(){
-		Application.LoadLevel(1);
+		Application.LoadLevel(0);
 	}
 	public void Respawn(){
 		GameVariables.respawn = true;
