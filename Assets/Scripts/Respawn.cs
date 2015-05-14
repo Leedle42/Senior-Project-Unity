@@ -12,6 +12,9 @@ public class Respawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (transform.position.y < -50 && !GameVariables.respawn) {
+			if (!GameVariables.died){
+				GameVariables.deathSound = true;
+			}
 			GameVariables.died = true;
 		}
 		if (GameVariables.respawn){

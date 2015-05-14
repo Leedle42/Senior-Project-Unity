@@ -22,6 +22,7 @@ public static class GameVariables {
 	public static bool resume;
 	public static bool respawn = false;
 	public static bool died = false;
+	public static bool deathSound = false;
 
 	public static int deaths = 0;
 	public static int level = 0;

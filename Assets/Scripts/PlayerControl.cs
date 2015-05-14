@@ -3,14 +3,18 @@ using System.Collections;
 
 
 public class PlayerControl : MonoBehaviour {
-	//limiting variables
+	//speed variables
 	public float movementSpeed = 1.0f;
 	public float mouseSensitivity = 4.0f;
 	public float jumpSpeed = 20.0f;
 	public float upDownRange = 70.0f;
-	//Non Public
+	//variable to reset gravity
 	int gravityReset = 0;
+	//Pause menu gameobject
 	public GameObject pauseScreen;
+	//Death sound
+	public AudioClip death;
+	private AudioSource deathSound;
 
 
 
@@ -27,11 +31,14 @@ public class PlayerControl : MonoBehaviour {
 		GameVariables.paused = false;
 		GameVariables.resume = true;
 		pauseScreen.SetActive (false);
+		//
+		deathSound = this.GetComponent<AudioSource> ();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		deathSound.PlayOneShot(death);
 		//Pause Screen Scripts
 		if (Input.GetButtonUp("Pause")){
 			Time.timeScale = 0f;
@@ -89,6 +96,10 @@ public class PlayerControl : MonoBehaviour {
 				GameVariables.verticalVelocity += Physics.gravity.y * Time.deltaTime;
 				gravityReset = 0;
 			}
+
+		}
+		if (GameVariables.deathSound){
+			deathSound.PlayOneShot(death);
 		}
 	}
 
