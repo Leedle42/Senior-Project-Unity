@@ -16,9 +16,11 @@ public class BtnControls : MonoBehaviour {
 
 	public void StartGame(){
 		Application.LoadLevel(1);
+		GameVariables.sprintSpeed = 1;
 		GameVariables.deaths = 0;
 		GameVariables.respawn = false;
 		GameVariables.died = false;
+		YouWin.win = false;
 	}
 	
 	public void ExitMenuShow(){

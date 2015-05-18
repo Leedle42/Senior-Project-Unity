@@ -18,6 +18,9 @@ public class GUIManager : MonoBehaviour {
 	public Texture SprintBar10;
 	private RawImage img;
 
+	//You Win Overlay
+	public GameObject You_Win;
+
 	//Level Text
 	public GameObject Level_Text;
 	Text level;
@@ -32,6 +35,7 @@ public class GUIManager : MonoBehaviour {
 
 	// Use this for initialization
 	public void Start () {
+		You_Win.SetActive (false);
 		DeathOverlay.SetActive (false);
 		Death_Menu.SetActive (false);
 		img = (RawImage)SprintImage.GetComponent<RawImage>();
@@ -92,6 +96,16 @@ public class GUIManager : MonoBehaviour {
 		if (GameVariables.sprintSpeed > 4.5 && GameVariables.sprintSpeed <= 5.0) {
 			//SprintBar10
 			img.texture = (Texture)SprintBar10;
+		}
+
+		if (YouWin.win) {
+			You_Win.SetActive (true);
+			Death_Text.SetActive (false);
+			Level_Text.SetActive (false);
+			SprintImage.SetActive (false);
+			Time.timeScale = 0f;
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
 		}
 
 		//Death Counter

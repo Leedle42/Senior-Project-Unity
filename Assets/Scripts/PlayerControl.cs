@@ -54,7 +54,7 @@ public class PlayerControl : MonoBehaviour {
 			Cursor.lockState = CursorLockMode.Locked;
 			GameVariables.resume = false;
 		}
-		if (!GameVariables.paused && !GameVariables.died) {
+		if (!GameVariables.paused && !GameVariables.died && !YouWin.win) {
 			//Vertical Rotation
 			GameVariables.verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
 			GameVariables.verticalRotation = Mathf.Clamp (GameVariables.verticalRotation, -upDownRange, upDownRange);
