@@ -11,9 +11,11 @@ public class HorizontalObjectX : MonoBehaviour {
 	float timePassed = 0;
 	int moving = 1;
 	bool standing = false;
+	Vector3 startPos;
 	// Use this for initialization
 	void Start () {
 		GameVariables.collidingX = false;
+		startPos = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -30,8 +32,12 @@ public class HorizontalObjectX : MonoBehaviour {
 		}
 		//turn around
 		if (timePassed >= reverseTime) {
+			if (direction == -1) {
+				transform.position = startPos;
+			}
 			direction = direction * -1;
 			timePassed = 0;
+
 		}
 		// timer
 		timePassed += 1.0f * Time.deltaTime;
