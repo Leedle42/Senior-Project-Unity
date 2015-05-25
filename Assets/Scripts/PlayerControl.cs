@@ -48,6 +48,7 @@ public class PlayerControl : MonoBehaviour {
 			GameVariables.resume = false;
 			pauseScreen.SetActive (true);
 		}
+		// resume game
 		if (!GameVariables.paused && GameVariables.resume) {
 			Time.timeScale = 1f;
 			Cursor.visible = false;
@@ -62,13 +63,14 @@ public class PlayerControl : MonoBehaviour {
 
 			//Movement
 			if (characterController.isGrounded) {
+				// get button imputs
 				GameVariables.forwardSpeed = Input.GetAxis ("Vertical") * movementSpeed * GameVariables.sprintSpeed;
 				GameVariables.sideSpeed = Input.GetAxis ("Horizontal") * movementSpeed * GameVariables.sprintSpeed;
-				//Horizontal Rotation
+				//Horizontal Rotation by mouse
 				float rotLeftRight = Input.GetAxis ("Mouse X") * mouseSensitivity;
 				transform.Rotate (0, rotLeftRight, 0);
 			}
-			//Sprinting
+			//Sprinting by shift
 			if (Input.GetButton ("Sprint") && characterController.isGrounded && Input.GetAxis ("Vertical") > 0) {
 				GameVariables.sprintSpeed += ((Mathf.Pow (GameVariables.sprintSpeed, 2)) / 3) * Time.deltaTime;
 				GameVariables.sprintSpeed = Mathf.Clamp (GameVariables.sprintSpeed, 0, 5);
@@ -81,17 +83,19 @@ public class PlayerControl : MonoBehaviour {
 			if (characterController.isGrounded && Input.GetButtonDown ("Jump")) {
 				GameVariables.verticalVelocity = jumpSpeed;
 			}
+			//set up the movement vector and move
 			Vector3 speed = new Vector3 (GameVariables.sideSpeed, GameVariables.verticalVelocity, GameVariables.forwardSpeed);
 
 			speed = transform.rotation * speed;
 
 			characterController.Move (speed * Time.deltaTime);
 
-			// Gravity
+			//Gravity Reset
 			if (characterController.isGrounded && gravityReset == 0) {
 				gravityReset = 1;
 				GameVariables.verticalVelocity = -0.5f;
 			}
+			// Gravity
 			if (!characterController.isGrounded) {
 				GameVariables.verticalVelocity += Physics.gravity.y * Time.deltaTime;
 				gravityReset = 0;

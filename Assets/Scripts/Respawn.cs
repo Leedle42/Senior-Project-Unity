@@ -5,6 +5,7 @@ public class Respawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// make a new checkpoint where the player starts the game
 		GameVariables.checkpoint = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 		GameVariables.checkpointRot = Quaternion.Euler(0, 180, 0);
 	}
@@ -18,6 +19,7 @@ public class Respawn : MonoBehaviour {
 			GameVariables.died = true;
 		}
 		if (GameVariables.respawn){
+			// reset the player
 			transform.position = GameVariables.checkpoint;
 			transform.rotation = GameVariables.checkpointRot;
 			GameVariables.verticalRotation = 0;
@@ -31,6 +33,7 @@ public class Respawn : MonoBehaviour {
 			GameVariables.wasStandingZ = false;
 			GameVariables.collidingX = false;
 			GameVariables.wasStandingX = false;
+			// make sure nothing influences it by telling it collided with islands
 			GameVariables.lastCollide = GameObject.Find ("FloatingIsland");
 			Time.timeScale = 1f;
 			Cursor.visible = false;

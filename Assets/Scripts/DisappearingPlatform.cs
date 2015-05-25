@@ -10,6 +10,7 @@ public class DisappearingPlatform : MonoBehaviour {
 	private MeshRenderer meshRenderer;
 	// Use this for initialization
 	void Start () {
+		// access components of the platform so I can disable them
 		boxCollider = GetComponent<BoxCollider>();
 		meshRenderer = GetComponent <MeshRenderer>();
 	}
@@ -34,6 +35,7 @@ public class DisappearingPlatform : MonoBehaviour {
 
 		}
 	}
+	// tell the script to start the clock
 	void OnTriggerEnter(Collider collider) {
 		if (collider.gameObject.name == "Player") {
 			disappear = true;

@@ -21,10 +21,12 @@ public class ClockwiseRotate1 : MonoBehaviour {
 
 	void Update () {
 		Rotate ();
+		// check if player jumped off
 		if (GameVariables.lastCollide.name != thisObject || GameVariables.fellFromRotate == true) {
 			wasStandingR = false;
 			GameVariables.fellFromRotate = false;
 		}
+		// launch the player tangent to platform
 		if (wasStandingR == true) {
 
 			GameObject.Find("Player").transform.Translate (launchSpeed * Time.deltaTime, Space.World);
@@ -33,6 +35,7 @@ public class ClockwiseRotate1 : MonoBehaviour {
 	}
 
 	void Rotate(){
+		// rotate the platform
 		transform.RotateAround (GameObject.Find (center).transform.position, new Vector3 (0, direction, 0), rotateSpeed * Time.deltaTime); // (1 is left) (-1 is right)
 	}
 	void OnTriggerExit (Collider collider) {

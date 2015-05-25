@@ -20,7 +20,7 @@ public class HorizontalObjectX : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		// moving engine
 		transform.Translate(Vector3.left * horizontalVelocity * Time.deltaTime * direction * moving, Space.World);
 		// moving
 		if (timePassed <= travelTime) {
