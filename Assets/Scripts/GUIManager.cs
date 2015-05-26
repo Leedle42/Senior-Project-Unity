@@ -47,6 +47,7 @@ public class GUIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void Update () {
+		// Death Screen
 		if (GameVariables.died) {
 			DeathOverlay.SetActive (true);
 			Death_Menu.SetActive (true);
@@ -97,7 +98,7 @@ public class GUIManager : MonoBehaviour {
 			//SprintBar10
 			img.texture = (Texture)SprintBar10;
 		}
-
+		//You Win Screen
 		if (YouWin.win) {
 			You_Win.SetActive (true);
 			Death_Text.SetActive (false);

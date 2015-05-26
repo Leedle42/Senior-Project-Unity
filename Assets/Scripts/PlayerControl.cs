@@ -38,7 +38,6 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		deathSound.PlayOneShot(death);
 		//Pause Screen Scripts
 		if (Input.GetButtonUp("Pause")){
 			Time.timeScale = 0f;
@@ -55,6 +54,7 @@ public class PlayerControl : MonoBehaviour {
 			Cursor.lockState = CursorLockMode.Locked;
 			GameVariables.resume = false;
 		}
+		//Full character Movement
 		if (!GameVariables.paused && !GameVariables.died && !YouWin.win) {
 			//Vertical Rotation
 			GameVariables.verticalRotation -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
@@ -104,6 +104,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 		if (GameVariables.deathSound){
 			deathSound.PlayOneShot(death);
+			GameVariables.deathSound = false;
 		}
 	}
 
